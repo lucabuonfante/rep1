@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Wl,--dependency-file=CMakeFiles/eseguies1.8.dir/link.d CMakeFiles/eseguies1.8.dir/esercizio1.8.cpp.o -o eseguies1.8
