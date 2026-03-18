@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Wl,--dependency-file=CMakeFiles/eseguibile1.dir/link.d CMakeFiles/eseguibile1.dir/esercizio1.8.cpp.o CMakeFiles/eseguibile1.dir/esEsempio.cpp.o -o eseguibile1
