@@ -33,4 +33,22 @@ int main() {
     double devstd= sqrt((distq)/N);
 
     cout << "minimo: " << minimo << "\n" << "massimo: " << massimo << "\n" << "dev std: " << devstd << "\n";
+
+    //algoritmo di ordinamento bubblesort
+    ind=0;
+    while (ind<N-1) { //il ciclo arriva all'elemento di posto N-2, ossia il N-1 esimo 
+        double p=arr[ind];
+        double s=arr[ind+1];
+        if (p>s) {
+            arr[ind]=s;
+            arr[ind+1]=p;
+        }
+        ind=ind+1;
+    }
+    
+    ind=0;
+    while (ind<N) {
+        cout << arr[ind] << "\n";
+        ind=ind+1;
+    }
 }
