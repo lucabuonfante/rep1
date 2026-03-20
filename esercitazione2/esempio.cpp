@@ -13,11 +13,33 @@ int main()
     
     (&y)[1] = 0; // siccome &y è un puntatore a float, prende la posizione di y, si sposta di 1*sizeof(float) = 4 e lì ci mette il float 0
     
+    cout << "posizione di x: " << &x <<"\n" << "posizione di y: " << &y << "\n";
     //che cosa c'è se mi sposto in avanti di un blocco da dove ho salvato y?
     // siccome y è un float, mi devo spostare in avanti di 4 byte. 
     //float* pdy= &//punta all'elemento dopo y
 
     cout << x << "\n";
+    int ind=0;
+
+    cout << "ad: " << "\n";
+    while (ind<4){
+        cout << &ad[ind] << "\n";
+        ind=ind+1;
+    }
+    ind=0;
+
+    cout << "af: " << "\n";
+    while (ind<8){
+        cout << &af[ind] << "\n";
+        ind=ind+1;
+    }
+    ind=0;
+
+    cout << "ai: " << "\n";
+    while (ind<3){
+        cout << &ai[ind] << "\n";
+        ind=ind+1;
+    }
 
     //return 0;
 }
