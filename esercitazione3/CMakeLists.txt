@@ -9,3 +9,4 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wshadow -Werror=vla")
 
 add_executable(esEsercizio esercizio.cpp)
 add_executable(esEsempio esempio3.cpp)
+add_executable(es3m es3_main.cpp)
