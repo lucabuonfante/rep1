@@ -1,0 +1,8 @@
+/home/pcsdocker/Data/rep1/esercitazione4/costruttore/CMakeFiles/measure_sorts.dir
+/home/pcsdocker/Data/rep1/esercitazione4/costruttore/CMakeFiles/test_stringhe.dir
+/home/pcsdocker/Data/rep1/esercitazione4/costruttore/CMakeFiles/test_bubblesort.dir
+/home/pcsdocker/Data/rep1/esercitazione4/costruttore/CMakeFiles/test_insertionsort.dir
+/home/pcsdocker/Data/rep1/esercitazione4/costruttore/CMakeFiles/test_selectionsort.dir
+/home/pcsdocker/Data/rep1/esercitazione4/costruttore/CMakeFiles/test.dir
+/home/pcsdocker/Data/rep1/esercitazione4/costruttore/CMakeFiles/edit_cache.dir
+/home/pcsdocker/Data/rep1/esercitazione4/costruttore/CMakeFiles/rebuild_cache.dir
