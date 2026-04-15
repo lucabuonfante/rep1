@@ -19,6 +19,12 @@ int main() {
     std::vector<std::string> v=bubblesort(vec);
     std::vector<std::string> w=ins_sort(vec);
     std::vector<std::string> z=sel_sort(vec);
+    int ind=0;
+    while (ind<10) {
+        std::cout << "v: " << v[ind] << " " << "w: " << w[ind] << " " << "z: " << z[ind] << "\n";
+        ind=ind+1;
+    }
+    
     
     if (is_sorted(v)==true && is_sorted(w)==true &&  is_sorted(z)==true) {
         std::cout << "i vettori sono tutti ordinati \n";
