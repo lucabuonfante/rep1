@@ -98,3 +98,53 @@ void quicksort(std::vector<T> &A, int p, int r) {
 }
 
 
+/*merge ma senza creare ogni volta nuovi vettori*/
+template<typename T>
+void merge2(std::vector<T> &A, int p, int q, int r, std::vector<T> &v) {
+   int i=p; /*indice per L*/
+   int j=q+1; /* indice per R*/
+   int k=p; 
+   
+   while (i<=q && j<=r) /* finché L e R sono sono finiti*/ {
+        if (A[i]<=A[j]) /* se L[i] < R[j]*/ {
+            v[k]=A[i]; /* rimepio v in modo che sia ordinato*/
+            i=i+1;
+            k=k+1;
+        }
+        else{
+            v[k]=A[j];
+            j=j+1;
+            k=k+1;
+        }
+   }
+
+   /* se siamo usciti dal ciclo vuol dire che 
+   almeno uno tra L e R è finito, quindi "esaurisco" l'altro  */
+   while (i<=q) {
+        v[k]=A[i];
+        i=i+1;
+        k=k+1;
+   }
+
+   while (j<=r) {
+        v[k]=A[j];
+        j=j+1;
+        k=k+1;
+   }
+
+   /*copiamo v (ora ordinato) in A*/
+   for (int s = p; s<= r; s++) {
+        A[s]=v[s];
+   }
+
+}
+
+template <typename T>
+void mergesort2(std::vector<T> &A, int p, int r, std::vector<T> &v) {
+    if (p<r) {
+        int q=floor((p+r)/2); //parte intera
+        mergesort2 (A,p,q,v);
+        mergesort2 (A,q+1,r,v);
+        merge2(A,p,q,r,v);
+    }
+} 

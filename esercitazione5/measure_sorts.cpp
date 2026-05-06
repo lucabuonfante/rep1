@@ -22,7 +22,7 @@ int main() {
     std::vector<double> t_mix(99);
 
     while (n<=100) { //dimensione dei vettori
-        int d=3*n;
+        int d=10*n;
         t_bubble[n-2]=0; //mettiamo a 0 la componente del vettore relativa alla dimensione n
         t_ins[n-2]=0;
         t_sel[n-2]=0;
@@ -63,7 +63,8 @@ int main() {
             
             std::vector<int> w=vec;
             tc.tic();
-            mergesort(w,0,d-1); 
+            std::vector<int> p(w.size());
+            mergesort2(w,0,d-1,p); 
             secs=tc.toc();
             t_merge[n-2]=t_merge[n-2]+secs;
             

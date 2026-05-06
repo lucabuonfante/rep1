@@ -17,8 +17,9 @@ int main() {
     int ind=0;
     while (ind<100) {
         std::vector vec = vett_cas(); //uso il randfiller per costruire un vettore di dimensione 20
-        int l=size(vec);
-        mergesort(vec,0,l-1); //ordino il vettore
+        int l=vec.size();
+        std::vector<int> p(l);
+        mergesort2(vec,0,l-1,p); //ordino il vettore
         if (is_sorted(vec)==false) {
         return EXIT_FAILURE;
         }

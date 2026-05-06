@@ -23,7 +23,8 @@ int main() {
     ins_sort(w);
     std::vector<std::string> z=sel_sort(vec);
     std::vector<std::string> k=vec;
-    mergesort(k,0,9);
+    std::vector<std::string> j(k.size());
+    mergesort2(k,0,9,j);
     std::vector<std::string> x=vec;
     quicksort(x,0,9);
     std::vector<std::string> r=vec;
