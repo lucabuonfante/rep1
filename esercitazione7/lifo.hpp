@@ -21,6 +21,10 @@ class lifo {
     bool empty() {
         return s.empty();
     }
+
+    void rem(){
+        s.pop();
+    }
 };
 
 

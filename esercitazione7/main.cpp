@@ -11,6 +11,8 @@
 #include "lifo.hpp"
 #include "dijkstra.hpp"
 #include "grafo_pesato.hpp"
+#include "dfs_recursive_final.hpp"
+#include "visit_again.hpp"
 
 void stampa_grafo(const grafo<int>& g)  {
     
@@ -44,13 +46,28 @@ int main() {
     g1.add_edge(unidir_edge<int>(2, 5));
     std::cout << "grafo g1: \n";
     stampa_grafo(g1);
-    lifo<int> s;
-    grafo<int> albero= graph_visit(g1,0,s);
+    
+    std::cout << "dfs iterativa (visit_again) \n";
+    lifo<dir_edge<int>> s;
+    grafo<int> albero= visit_again(g1,0,s);
     stampa_grafo(albero);
 
-    fifo<int> c;
-    grafo<int> albero2= graph_visit(g1,0,c);
+    /*dfs ricorsiva*/
+    std::cout << "dfs ricorsiva \n";
+    int rad=0;
+    grafo<int> albero3= dfs_rec_final(rad, g1);
+    stampa_grafo(albero3);
+
+    std::cout << "visit_again, bfs";
+    fifo<dir_edge<int>> c;
+    grafo<int> albero2= visit_again(g1,0,c);
     stampa_grafo(albero2);
+
+    std::cout << "grafo sbagliato dfs (visit): ";
+    lifo<int> s1;
+    grafo<int> albero4= graph_visit(g1,0,s1);
+    stampa_grafo(albero4);
+
 
     /*costruzione del grafo pesato per dijkstra*/
     std::map<int, std::set<int>> v2=g1.nodi();

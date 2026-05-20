@@ -7,14 +7,13 @@
 #include <unordered_set>
 
 template <typename T>
-void dfs_recursive_function(T rad, grafo<T>& g, std::map<T,std::set<T>>& visit, std::unordered_set<T>& visitati) {
+void dfs_recursive_function(const T& rad, const grafo<T>& g, std::map<T,std::set<T>>& visit) {
     
-    visitati.insert(rad);
-    for (auto& vicino : g.vicini(rad)) {
-        if (visitati.contains(vicino)==false) {
+    for (const auto& vicino : g.vicini(rad)) {
+        if (visit.contains(vicino)==false) {
             visit[rad].insert(vicino);
             visit[vicino].insert(rad);
-            dfs_recursive_function(vicino, g, visit, visitati);
+            dfs_recursive_function(vicino, g, visit);
         }
     }
      

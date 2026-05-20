@@ -21,5 +21,9 @@ class fifo {
     bool empty() {
         return q.empty();
     }
+
+    void rem(){
+        q.pop();
+    }
 };
 

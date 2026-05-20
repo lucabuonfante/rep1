@@ -6,6 +6,7 @@
 #include<set>
 #include<unordered_set>
 
+
 template <typename T, typename cont>
 grafo<T> graph_visit(const grafo<T> & g, const T& rad, cont & c) {
     /*prendo un nodo, controllo i vicini e tolgo quelli che non visito
@@ -15,10 +16,11 @@ grafo<T> graph_visit(const grafo<T> & g, const T& rad, cont & c) {
     /*costruisco la mappa dei nodi visitati e li segno come non visitati*/
     
     c.put(rad); /*metto la radice nel contenitore*/
-    
+    visitati.insert(rad);
     while(c.empty()==false) {
         T e=c.get();
-        std::set<T> vicini=g.vicini(e);
+        
+        const std::set<T>& vicini=g.vicini(e);
         for (auto& vicino :vicini) {
             if (visitati.contains(vicino)==false) {
                 visitati.insert(vicino);
@@ -29,6 +31,7 @@ grafo<T> graph_visit(const grafo<T> & g, const T& rad, cont & c) {
         }
         
     }
+    
     grafo<T> albero(visit);
     return albero;
     

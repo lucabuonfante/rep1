@@ -8,7 +8,7 @@
 
 
 template <typename T>
-std::map<T,std::list<T>> dijkstra (T start, grafop<T>& g) { /*per ogni noddo mettiamo il vettore di precedenti in ordine*/
+std::map<T,std::list<T>> dijkstra (T start, const grafop<T>& g) { /*per ogni noddo mettiamo il vettore di precedenti in ordine*/
     
     std::priority_queue<coppia<T>> pq; /*inizializza la priority queue*/
     pq.push(coppia<T>(start,0));
